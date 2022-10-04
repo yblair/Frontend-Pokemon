@@ -1,0 +1,51 @@
+*{
+   
+    font-family: 'Coda', cursive;
+  
+}
+
+body{
+    background-image: url("https://images.unsplash.com/photo-1628968434441-d9c1c66dcde7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"); 
+  /*  background-image: url("https://www.todofondos.net/wp-content/uploads/1920x1080-Pokemon-Wallpaper-Pikachu-1024x576.jpg"); */
+   background-size: 100%;
+  
+    background-attachment: fixed;
+}
+
+.container{
+
+    border-radius: 10px;
+    padding: 10em;
+    margin: 0%;
+}
+
+
+
+.boton{
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #F2B90F;
+    color: black;
+    border: 1px solid #F2B90F;
+    justify-content: center;
+        cursor: pointer; 
+        transition: all 0.3s ease;
+        font-size: 16px;
+        font-weight: bold;
+       
+        
+    
+}
+
+.boton:hover{
+    color: #F2B90F;
+    border: 3px solid #F2B90F;
+    background-color: #2B448C;
+    transform: scale(1.05);
+}
+
+.boton:active{
+    transform: scale(.95);
+}
+
