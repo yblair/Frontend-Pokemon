@@ -28,7 +28,7 @@ export function postPokemon(payload){
 }
 
 export function searchName(name){
-    try{
+    
         return async function(dispatch){
             let jsonName = await axios(`https://pokebackendbelen.herokuapp.com/pokemons?name=${name}`)
             return dispatch({
@@ -36,10 +36,8 @@ export function searchName(name){
                 payload: jsonName.data
             })
         }
-    }
-    catch(err){
-        return err
-    }
+    
+
 }
 
 export function getDetails(id){
@@ -78,5 +76,12 @@ export function filterType(payload){
         type: 'FILTER_TYPE',
         payload
     }
+
 }
+
+    export function cleanDetails(){
+        return({
+            type: "CLEAN_DETAILS",
+            
+        }) }
 

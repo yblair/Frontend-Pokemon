@@ -109,6 +109,13 @@ function rootReducer(state = initialState, action){
                 details: action.payload
             }
 
+            case "CLEAN_DETAILS":
+
+        return{
+            ...state,
+            details:[]
+        }
+
             default : 
             return state
     }

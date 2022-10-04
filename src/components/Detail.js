@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDetails } from '../redux/actions';
+import { getDetails, cleanDetails } from '../redux/actions';
 import { useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import '../styles/Detail.css';
@@ -10,15 +10,7 @@ import '../styles/Detail.css';
 export default function Detail() {
     const dispatch = useDispatch();
     const params = useParams();
-   
 
-    const [detail, setDetail] = useState("")
-
-
-    function handleBoton(e){
-        e.preventDefault();
-        setDetail("")
-    }
 
     useEffect(() => {
         dispatch(getDetails(params.id))
@@ -26,7 +18,11 @@ export default function Detail() {
     
     const pokemon = useSelector((state) => state.details)
 
-
+    useEffect(() => {
+        return function (){
+          dispatch(cleanDetails())
+        }
+      },[dispatch])
 
     return (
         <div className='div-details-container'>
@@ -49,7 +45,7 @@ export default function Detail() {
                     </div>
                     <div className="btn">
                         <Link to = '/home'>
-                            <button onChange={(e) =>{handleBoton(e)}} className='btn_home'>Close</button>    
+                            <button className='btn_home'>Close</button>    
                         </Link>
                     </div>
                 </div>
