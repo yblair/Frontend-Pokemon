@@ -37,7 +37,9 @@ export function searchName(name){
             })
         }
     }
-    catch(err){return err}
+    catch(err){
+        return err
+    }
 }
 
 export function getDetails(id){
